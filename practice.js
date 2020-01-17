@@ -200,25 +200,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 function removeItem(myGroceryList, remove) {
-  let x = myGroceryList.length
+  if(!myGroceryList) {
+    return []
+  }
+  if(!remove) {
+    return []
+  }
   for(let i = 0; i < myGroceryList.length; i++) {
     if(myGroceryList[i] === remove) {
       myGroceryList.splice(i, 1)
-    }else {
-      x--
     }
-  }
-  if(x === 0) {
-    return []
   }
   return myGroceryList
 }
 
 function addItem(myGroceryList, add) {
-  myGroceryList.push(add)
   if(!myGroceryList) {
     return []
   }
+  if(!add) {
+    return []
+  }
+  myGroceryList.push(add)
   return myGroceryList
 }
 
